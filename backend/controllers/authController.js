@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/authModel');
 const jwt = require('jsonwebtoken');
 
+
+console.log(process.env.CLIENT_SECRETE_KEY);
 //Register EndPoint
 const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
