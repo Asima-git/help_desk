@@ -12,7 +12,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(
-  cors({origin: 'http://localhost:3000',
+  cors({origin: 'https://help-desk-psi-eight.vercel.app',
       methods: ['GET','POST','DELETE','PUT'],
       allowedHeaders:[
           "Content-Type",
@@ -25,7 +25,7 @@ app.use(
   })
 )
 app.use(
-cors({origin: 'http://localhost:3000/',
+cors({origin: 'https://help-desk-psi-eight.vercel.app/',
     methods: ['GET','POST','DELETE','PUT'],
     allowedHeaders:[
         "Content-Type",
