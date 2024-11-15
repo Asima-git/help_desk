@@ -11,18 +11,7 @@ const port = process.env.HOST
 const app = express();
 app.use(cookieParser());
 
-app.use(cors({
-   origin: '*',
-   methods: '*',
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Cache-Control",
-    "Expires",
-    "Pragma"
-  ],
-  credentials: true
-}));
+app.use(cors());
 // app.use(cookieParser());
 app.use(express.json());
 //Routes
