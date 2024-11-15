@@ -3,8 +3,6 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/authModel');
 const jwt = require('jsonwebtoken');
 
-
-console.log(process.env.CLIENT_SECRETE_KEY,"controller");
 //Register EndPoint
 const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
@@ -73,6 +71,7 @@ const loginUser = async (req, res) => {
             .cookie("token", token, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',
+                sameSite: 'none',   
                 maxAge: 3600000 // 1 hour in milliseconds
             })
             .json({
