@@ -1,7 +1,7 @@
 var jwt = require('jsonwebtoken');
 const getUser = (req, res, next) => {
    const token = req.cookies.token;
-   console.log(process.env.CLIENT_SECRETE_KEY);
+   console.log(process.env.CLIENT_SECRETE_KEY,"" middleware);
     if(!token){
         return res.status(401).json({
             success:false,
