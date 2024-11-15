@@ -2,7 +2,7 @@ import ApiContext from "./ApiState";
 import axios from 'axios';
 
 const DataContext = (props) => {
-    const host = 'http://localhost:5000';
+    const host = process.env.REACT_APP_BACKEND_URI;
      
     //Register User
     const registerUser = async(formData)=>{
