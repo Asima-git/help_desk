@@ -63,7 +63,7 @@ const AdminLayout = () => {
         <ToastContainer />
 
         {/* Main Content */}
-        <div className="flex flex-col flex-grow bg-gray-100 md:ml-64">
+        <div className="flex flex-col flex-grow bg-gray-100">
           {/* Header */}
          
           <header className="flex items-center justify-between bg-gray-900 text-white p-4 shadow md:static fixed top-0 left-0 w-full z-40">
