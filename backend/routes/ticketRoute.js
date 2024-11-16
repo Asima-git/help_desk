@@ -5,15 +5,15 @@ const {generateTicket,getAllTickets,getSingleTickets,ticketReply,allTickets,
 const getUser = require('../middleware/getUser');
 const {upload} = require('../utils/fileUpload');
 
-router.post('/generate-ticket',getUser,generateTicket);
-router.get('/all-ticket',getUser,getAllTickets);
-router.get('/view/:id',getUser,getSingleTickets);
-router.post('/reply',getUser,upload.single('attachement'), ticketReply);
-router.get('/list-ticket',getUser,allTickets);
-router.get('/get-reply/:id',getUser,getTicketReply);
-router.get('/users',getUser,listUsers);
-router.post('/create-user',getUser,createUser);
-router.put('/update-reply/:id',getUser,updateTicketReply);
+router.post('/generate-ticket',generateTicket);
+router.get('/all-ticket',getAllTickets);
+router.get('/view/:id',getSingleTickets);
+router.post('/reply',upload.single('attachement'), ticketReply);
+router.get('/list-ticket',allTickets);
+router.get('/get-reply/:id',getTicketReply);
+router.get('/users',listUsers);
+router.post('/create-user',createUser);
+router.put('/update-reply/:id',updateTicketReply);
 router.delete('/delete-reply/:id',deleteTicketReply);
 
 module.exports = router
