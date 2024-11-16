@@ -9,10 +9,9 @@ connectToMongo();
 const port = process.env.HOST
 
 const app = express();
-app.use(cookieParser());
-
 app.use(cors());
-// app.use(cookieParser());
+
+app.use(cookieParser());
 app.use(express.json());
 //Routes
 app.use('/api/auth',authRoute)
