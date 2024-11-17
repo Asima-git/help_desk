@@ -9,6 +9,7 @@ connectToMongo();
 const port = process.env.HOST
 
 const app = express();
+app.set('trust proxy',1)
 app.use(cookieParser());
 app.use(cors({
     origin: 'https://help-desk-psi-eight.vercel.app',

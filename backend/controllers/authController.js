@@ -66,14 +66,17 @@ const loginUser = async (req, res) => {
             },process.env.CLIENT_SECRETE_KEY, 
             { expiresIn: "60m" }
         );
-        console.log(token);
-        return res.cookie('token', token, {
-          path: '/',
-          httpOnly: true,
-          expires: new Date(Date.now() + 1000 * 84600), // 1 day
-          sameSite: 'none',
-          secure: true,
-        }).json({
+
+        return res
+            .status(200)
+            .cookie("token", token, {
+                  httpOnly: true, 
+                  secure: process.env.NODE_ENV === 'production', 
+                  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+                  maxAge: 3600000,
+                  domain: process.env.NODE_ENV === 'production' ? '.help-desk-psi-eight.vercel.app' : undefined, 
+              })
+            .json({
                 success: true,
                 message: "Logged in successfully",
                 user: {
