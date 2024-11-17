@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 const getUser = (req, res, next) => {
    const token = req.cookies.token;
-   console.log("Token:", token);
-   console.log("Environment:", process.env.NODE_ENV);
     if(!token){
         return res.status(401).json({
             success:false,

@@ -84,6 +84,7 @@ const loginUser = async (req, res) => {
                     role: checkUser.role,
                     id: checkUser._id,
                     name: checkUser.name,
+                    token:token
                 },
             });
     } catch (error) {
