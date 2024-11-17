@@ -6,8 +6,7 @@ const getUser = (req, res, next) => {
     if(!token){
         return res.status(401).json({
             success:false,
-            message:"Unauthorised User",
-            token:"Token:"
+            message:"Unauthorised User"
         })
      }
      try {
@@ -18,7 +17,6 @@ const getUser = (req, res, next) => {
         res.status(401).json({
             success:false,
             message:"Unauthorised User",
-            token:"Token:"
             error:error
         })
      }
