@@ -72,8 +72,8 @@ const loginUser = async (req, res) => {
                   httpOnly: true, 
                   secure: process.env.NODE_ENV === 'production', 
                   sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-                  maxAge: 3600000, // 1 hour in milliseconds
-                  domain: process.env.NODE_ENV === 'production' ? '.yourdomain.com' : undefined, 
+                  maxAge: 3600000,
+                  domain: process.env.NODE_ENV === 'production' ? '.help-desk-psi-eight.vercel.app' : undefined, 
               })
             .json({
                 success: true,
