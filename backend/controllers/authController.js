@@ -66,6 +66,7 @@ const loginUser = async (req, res) => {
             },process.env.CLIENT_SECRETE_KEY, 
             { expiresIn: "60m" }
         );
+        console.log(token);
         return res
             .status(200)
             .cookie("token", token, {
